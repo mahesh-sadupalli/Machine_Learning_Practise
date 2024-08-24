@@ -1,0 +1,84 @@
+```{r}
+library(tidyverse)
+```
+
+```{r}
+library(palmerpenguins)
+library(ggthemes)
+```
+
+```{r}
+penguins
+```
+
+```{r}
+head(penguins,5)
+```
+```{r}
+tail(penguins,5)
+```
+```{r}
+any(is.na(penguins))
+```
+```{r}
+is.na(penguins)
+```
+```{r}
+colSums(is.na(penguins))
+```
+```{r}
+sum(is.na(penguins))
+```
+
+
+```{r}
+glimpse(penguins)
+```
+
+```{r}
+ggplot(data = penguins,
+       mapping = aes(x = flipper_length_mm, y = body_mass_g)) + 
+  geom_point(mapping = aes(colour = species, shape = species))+
+  geom_smooth(method = "lm")+
+  labs(
+    title = "Body mass and flipper length",
+    subtitle = "Dimensions for Adelie, Chinstrap, and Gentoo Penguins",
+    x = "flipper length(mm)", y ="Body mass(g)", 
+    colour = "species", shape = "species"
+  ) +
+  scale_color_colorblind()
+
+```
+```{r}
+ggplot() + geom_point(
+data = penguins,
+mapping = aes(x = flipper_length_mm, y = body_mass_g) )+
+geom_smooth(
+data = penguins,
+mapping = aes(x = flipper_length_mm, y = body_mass_g)
+)
+
+```
+```{r}
+penguins |>
+  ggplot(aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point()
+
+```
+```{r}
+ggplot(penguins, aes(x= species)) + geom_bar()
+```
+```{r}
+ggplot(penguins, aes(x= fct_infreq (species))) + geom_bar()
+```
+```{r}
+ggplot(penguins, aes(x= body_mass_g)) + geom_histogram(bin_width = 200)
+```
+```{r}
+ggplot(penguins, aes(x= body_mass_g)) + geom_density()
+ggplot(penguins, aes(colour = species, x = body_mass_g)) + geom_density(linewidth = 0.5)
+ggplot(penguins, aes(colour = species,fill = species, x = body_mass_g)) + geom_density(alpha = 0.5)
+```
+```{r}
+ggplot(penguins, aes(x= species, y= body_mass_g)) + geom_boxplot()
+```
