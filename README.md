@@ -16,10 +16,3 @@ Each directory in the repository is a standalone project or a set of related scr
 - Libraries: Various ML libraries such as scikit-learn, TensorFlow, PyTorch, Pandas, NumPy, and more.
 - Jupyter Notebooks: For interactive coding and tutorials.
 
-## How to Use This Repository
-
-Feel free to explore the directories and code samples. You can clone the repository to run the samples locally:
-
-```bash
-git clone https://github.com/yourusername/machine-learning-samples.git
-cd machine-learning-samples
